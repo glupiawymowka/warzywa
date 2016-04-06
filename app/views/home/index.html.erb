@@ -1,0 +1,22 @@
+<%= link_to 'dupa', dupa_url %><br>
+<%= link_to 'majonez', majonez_url %>
+
+<p>
+  <%= form_for @vegetable do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :vegetable_type %>
+    <%= f.text_field :vegetable_type %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <%= f.submit %>
+  <% end %>
+</p>
+
+<p>
+  <ul>
+    <% Vegetable.all.each do |warzywo| %>
+      <li><%= warzywo.inspect %></li>
+    <% end %> 
+  </ul>
+</p>
